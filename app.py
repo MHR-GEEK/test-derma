@@ -126,6 +126,43 @@ def append_memory(role, content):
         save_memory(memory)
 
 
+def compact_list(items, limit=4):
+    if not isinstance(items, list):
+        return "-"
+    values = [str(item).strip() for item in items if str(item).strip()]
+    return "; ".join(values[:limit]) or "-"
+
+
+def compact_routine(routine):
+    if not isinstance(routine, list):
+        return "-"
+    steps = []
+    for item in routine:
+        if not isinstance(item, dict):
+            continue
+        step = str(item.get("step", "Step")).strip()
+        recommendation = str(item.get("recommendation", "")).strip()
+        if recommendation:
+            steps.append(f"{step}: {recommendation}")
+    return "; ".join(steps[:4]) or "-"
+
+
+def scan_memory_summary(result):
+    return (
+        "Image scan result memory: "
+        f"skin type={result.get('skin_type', '-')}; "
+        f"skin quality={result.get('sensitivity', '-')}; "
+        f"face structure={result.get('psl_score', '-')}; "
+        f"photo rating={result.get('image_ratio_score', '-')}; "
+        f"skin information={compact_list(result.get('skin_information'))}; "
+        f"visible concerns={compact_list(result.get('concerns'))}; "
+        f"routine={compact_routine(result.get('routine'))}; "
+        f"care advice={compact_list(result.get('care_plan'))}; "
+        f"summary={result.get('professional_summary', '')}; "
+        f"notes={result.get('notes', '')}"
+    )
+
+
 def remember_analysis(result):
     with memory_lock:
         memory = load_memory()
@@ -133,6 +170,13 @@ def remember_analysis(result):
             "created_at": utc_now(),
             "result": result,
         }
+        memory["messages"].append(
+            {
+                "role": "assistant",
+                "content": scan_memory_summary(result),
+                "created_at": utc_now(),
+            }
+        )
         save_memory(memory)
 
 
@@ -174,19 +218,17 @@ def latest_analysis_context(latest_analysis):
     if not latest_analysis:
         return ""
     result = latest_analysis.get("result") or {}
-    concerns = result.get("concerns") if isinstance(result.get("concerns"), list) else []
-    routine = result.get("routine") if isinstance(result.get("routine"), list) else []
-    routine_text = "; ".join(
-        f"{item.get('step', 'Step')}: {item.get('recommendation', '')}"
-        for item in routine
-        if isinstance(item, dict)
-    )
     return (
         "Latest saved skin scan context: "
         f"skin_type={result.get('skin_type', '-')}; "
-        f"sensitivity={result.get('sensitivity', '-')}; "
-        f"concerns={', '.join(map(str, concerns)) or '-'}; "
-        f"routine={routine_text or '-'}; "
+        f"skin_quality={result.get('sensitivity', '-')}; "
+        f"face_structure={result.get('psl_score', '-')}; "
+        f"photo_rating={result.get('image_ratio_score', '-')}; "
+        f"skin_information={compact_list(result.get('skin_information'))}; "
+        f"concerns={compact_list(result.get('concerns'))}; "
+        f"routine={compact_routine(result.get('routine'))}; "
+        f"care_advice={compact_list(result.get('care_plan'))}; "
+        f"summary={result.get('professional_summary', '')}; "
         f"notes={result.get('notes', '')}"
     )
 
