@@ -1,0 +1,144 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Say memory test in five words",
+      "created_at": "2026-07-02T17:52:58.312092+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Memory test: recalling past skincare chats. How can I help you with your skincare today?",
+      "created_at": "2026-07-02T17:52:58.331651+00:00"
+    },
+    {
+      "role": "user",
+      "content": "hy",
+      "created_at": "2026-07-02T17:53:17.907704+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Hi! Do you have any skincare questions or need help with your routine?",
+      "created_at": "2026-07-02T17:53:17.923516+00:00"
+    },
+    {
+      "role": "user",
+      "content": "i have acne",
+      "created_at": "2026-07-02T17:53:29.474670+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Acne can be frustrating! Consider a gentle cleanser, salicylic acid or benzoyl peroxide treatment, and a lightweight, non-comedogenic moisturizer \u2013 but see a dermatologist for persistent or severe breakouts.",
+      "created_at": "2026-07-02T17:53:29.483900+00:00"
+    },
+    {
+      "role": "user",
+      "content": "dont u think",
+      "created_at": "2026-07-02T17:53:39.100609+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "I understand you may have a thought! Could you please finish your sentence so I can better assist you?",
+      "created_at": "2026-07-02T17:53:39.122473+00:00"
+    },
+    {
+      "role": "user",
+      "content": "how can i make it disapear",
+      "created_at": "2026-07-02T17:53:57.599212+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Unfortunately, acne doesn't typically disappear instantly, but consistent skincare and targeted treatments can significantly improve it. A dermatologist can assess your skin and recommend the best course of action for lasting results.",
+      "created_at": "2026-07-02T17:53:57.611855+00:00"
+    },
+    {
+      "role": "user",
+      "content": "u have memory ?",
+      "created_at": "2026-07-02T17:54:16.275514+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Yes, I do have memory! I remember our previous conversation about your acne and that you're looking for ways to improve it.",
+      "created_at": "2026-07-02T17:54:16.288704+00:00"
+    },
+    {
+      "role": "user",
+      "content": "i got acne",
+      "created_at": "2026-07-02T18:04:04.970079+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "I recall you mentioning acne\u2014it's great you're addressing it! Would you like me to suggest specific treatments or discuss your current routine?",
+      "created_at": "2026-07-02T18:04:04.989336+00:00"
+    },
+    {
+      "role": "user",
+      "content": "u remember",
+      "created_at": "2026-07-02T18:04:16.883935+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Yes, I remember! I retain information from our past interactions to provide more personalized skincare guidance.",
+      "created_at": "2026-07-02T18:04:16.897780+00:00"
+    },
+    {
+      "role": "user",
+      "content": "hy",
+      "created_at": "2026-07-02T18:11:33.714000+00:00"
+    },
+    {
+      "role": "assistant",
+      "content": "Hi! Still focusing on that acne concern, or do you have something new you'd like to discuss?",
+      "created_at": "2026-07-02T18:11:33.727922+00:00"
+    }
+  ],
+  "latest_analysis": {
+    "created_at": "2026-07-02T18:02:59.198706+00:00",
+    "result": {
+      "ai_available": true,
+      "skin_type": "normal",
+      "skin_information": [
+        "Appears generally smooth-textured.",
+        "Minimal visible pores.",
+        "Even skin tone.",
+        "Good hydration."
+      ],
+      "concerns": [
+        "unclear"
+      ],
+      "sensitivity": "clear",
+      "psl_score": "oval balanced",
+      "facial_rating": "balanced features",
+      "image_ratio_score": "8/10",
+      "proportion_notes": [
+        "Good lighting.",
+        "Slightly angled perspective.",
+        "Clear view of facial features."
+      ],
+      "routine": [
+        {
+          "step": "Cleanse",
+          "recommendation": "Use a gentle cleanser like Cetaphil Daily Facial Cleanser."
+        },
+        {
+          "step": "Moisturize",
+          "recommendation": "Apply a lightweight moisturizer, such as CeraVe Daily Moisturizing Lotion."
+        },
+        {
+          "step": "Protect",
+          "recommendation": "Apply a broad-spectrum SPF 30 or higher, such as Cetaphil Sunscreen."
+        },
+        {
+          "step": "Treat",
+          "recommendation": "Consider The Ordinary Niacinamide 10% + Zinc 1% to maintain clarity."
+        }
+      ],
+      "care_plan": [
+        "Maintain a consistent skincare routine.",
+        "Hydrate regularly with water.",
+        "Avoid harsh scrubbing or picking at the skin."
+      ],
+      "professional_summary": "Skin appears healthy and well-hydrated with minimal visible concerns.",
+      "notes": "This is a visual assessment only. Consult a dermatologist for any persistent or concerning skin issues."
+    }
+  }
+}
